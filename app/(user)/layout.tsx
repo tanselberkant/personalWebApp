@@ -1,5 +1,6 @@
-import '../styles/globals.css';
+import '../../styles/globals.css';
 import Head from './head';
+import Provider from './providers';
 
 export default function RootLayout({
   children,
@@ -9,7 +10,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <Head />
-      <body>{children}</body>
+      <body className="">
+        <Provider>{children}</Provider>
+      </body>
     </html>
   );
 }
