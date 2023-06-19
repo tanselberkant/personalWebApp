@@ -142,6 +142,7 @@ const Layout: React.FC<LayoutProps> = ({
                               </Link>
                             </li>
                           ))}
+                          <ThemeSwitcher />
                         </ul>
                       </li>
                     </ul>
