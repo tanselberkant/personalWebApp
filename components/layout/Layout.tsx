@@ -1,6 +1,5 @@
 'use client';
 import React, { Fragment, useState, useContext, useEffect } from 'react';
-// import { ThemeContext } from '../../context/ThemeContext';
 import { Dialog, Transition } from '@headlessui/react';
 import {
   Bars3Icon,
@@ -29,14 +28,6 @@ const Layout: React.FC<LayoutProps> = ({
   pageTitle,
   currentPath,
 }) => {
-  // const { theme, toggleDark } = useContext(ThemeContext);
-
-  // const toggleTheme = () => {
-  //   toggleDark();
-  // };
-
-  // console.log(theme);
-
   const navigation = [
     { name: 'Home', href: '/', icon: HomeIcon, current: currentPath === '/' },
     {
@@ -134,7 +125,7 @@ const Layout: React.FC<LayoutProps> = ({
                                 className={classNames(
                                   item.current
                                     ? `bg-light-secondary dark:bg-dark-secondary text-light-smallHeader dark:text-dark-smallHeader`
-                                    : `text-light-textDescription dark:text-dark-textDescription hover:text-dark-primary hover:bg-dark-textHeader`,
+                                    : `text-light-textDescription dark:text-dark-textDescription hover:text-light-primary hover:bg-light-textHeader dark:hover:text-dark-primary dark:hover:bg-dark-textHeader`,
                                   'group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold'
                                 )}
                               >
@@ -143,7 +134,7 @@ const Layout: React.FC<LayoutProps> = ({
                                     item.current
                                       ? `text-light-smallHeader dark:text-dark-smallHeader`
                                       : `text-light-textDescription dark:text-dark-textDescription  `,
-                                    `h-5 w-5 shrink-0 group-hover:text-dark-primary `
+                                    `h-5 w-5 shrink-0 group-hover:text-light-primary dark:group-hover:text-dark-primary `
                                   )}
                                   aria-hidden="true"
                                 />
@@ -165,7 +156,7 @@ const Layout: React.FC<LayoutProps> = ({
       <div className="hidden lg:fixed lg:inset-y-0 lg:z-50 lg:flex lg:w-56 lg:flex-col font-custom">
         {/* Sidebar component, swap this element with another sidebar if you like */}
         <div
-          className={`flex grow flex-col gap-y-5 overflow-y-auto border-r border-dark-secondary  bg-light-primary dark:bg-dark-primary px-6 pb-4`}
+          className={`flex grow flex-col gap-y-5 overflow-y-auto border-r border-light-secondary dark:border-dark-secondary  bg-light-primary dark:bg-dark-primary px-6 pb-4`}
         >
           <div className="flex h-16 shrink-0 items-center ">
             <NavbarLogo />
@@ -181,8 +172,8 @@ const Layout: React.FC<LayoutProps> = ({
                         href={item.href}
                         className={classNames(
                           item.current
-                            ? ` border-1 rounded-full border-dark-secondary  text-light-smallHeader dark:text-dark-smallHeader hover:text-dark-secondary`
-                            : `text-light-textDescription dark:text-dark-textDescription hover:text-dark-secondary hover:border-1 hover:border-dark-secondary roundend-full`,
+                            ? ` border-1 rounded-full border-light-secondary dark:border-dark-secondary  text-light-smallHeader dark:text-dark-smallHeader hover:text-light-secondary dark:hover:text-dark-secondary`
+                            : `text-light-textDescription dark:text-dark-textDescription hover:text-light-secondary  dark:hover:text-dark-secondary hover:border-1 hover:border-light-secondary dark:hover:border-dark-secondary roundend-full`,
                           'group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold'
                         )}
                       >
@@ -191,7 +182,7 @@ const Layout: React.FC<LayoutProps> = ({
                             item.current
                               ? `text-light-smallHeader dark:text-dark-smallHeader`
                               : `text-light-textDescription dark:text-dark-textDescription  `,
-                            `h-5 w-5 shrink-0 group-hover:text-dark-secondary `
+                            `h-5 w-5 shrink-0 group-hover:text-light-secondary  dark:group-hover:text-dark-secondary `
                           )}
                           aria-hidden="true"
                         />
@@ -213,7 +204,7 @@ const Layout: React.FC<LayoutProps> = ({
         className={`lg:pl-56 bg-light-primary dark:bg-dark-primary text-light-textDescription dark:text-dark-textDescription`}
       >
         <div
-          className={`sticky top-0 z-40 flex h-16 shrink-0 items-center gap-x-4 border-b border-dark-secondary bg-transparent backdrop-blur px-4 shadow-sm sm:gap-x-6 sm:px-6 lg:px-8`}
+          className={`sticky top-0 z-40 flex h-16 shrink-0 items-center gap-x-4 border-b  border-light-secondary dark:border-dark-secondary bg-transparent backdrop-blur px-4 shadow-sm sm:gap-x-6 sm:px-6 lg:px-8`}
         >
           <button
             type="button"
@@ -225,7 +216,7 @@ const Layout: React.FC<LayoutProps> = ({
           </button>
 
           <div className="flex flex-1 items-center">
-            <h1 className="text-primary pageHeading font-bold  text-dark-textHeader text-lg tracking-wide	 ">
+            <h1 className="text-primary pageHeading font-bold  text-light-textHeader dark:text-dark-textHeader text-lg tracking-wide	 ">
               {pageTitle}{' '}
             </h1>
           </div>
