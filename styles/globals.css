@@ -9,3 +9,9 @@ body {
 .dark body {
   background-color: #131126;
 }
+
+@media (prefers-color-schema: dark) {
+  html {
+    color-scheme: dark;
+  }
+}

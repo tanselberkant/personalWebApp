@@ -12,6 +12,11 @@ import {
 import Link from 'next/link';
 import NavbarLogo from './NavbarLogo';
 import ThemeSwitcher from './ThemeSwitcher';
+import { Inconsolata } from 'next/font/google';
+const inconsolata = Inconsolata({
+  subsets: ['latin'],
+  weight: ['400', '500', '700', '900'],
+});
 
 function classNames(...classes: any) {
   return classes.filter(Boolean).join(' ');
@@ -223,7 +228,9 @@ const Layout: React.FC<LayoutProps> = ({
           </div>
         </div>
         <main className="py-10 h-screen">
-          <div className="px-4 sm:px-6 lg:px-8 font-custom">{children}</div>
+          <div className="px-4 sm:px-6 lg:px-8 font-custom">
+            <div className={inconsolata.className}>{children}</div>
+          </div>
         </main>
       </div>
     </>
