@@ -1,4 +1,5 @@
 import BlogList from '@/components/BlogList';
+import HeroSection from '@/components/home/HeroSection';
 import Layout from '@/components/layout/Layout';
 import { client } from '@/lib/sanity.client';
 import { groq } from 'next-sanity';
@@ -17,7 +18,7 @@ export default async function HomePage() {
   return (
     <>
       <Layout pageTitle="Home" currentPath={'/'}>
-        <h1 className="text-4xl">DENEME</h1>
+        <HeroSection />
         <BlogList posts={posts} />
       </Layout>
     </>
