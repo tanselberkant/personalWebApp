@@ -39,7 +39,7 @@ const Layout: React.FC<LayoutProps> = ({
       name: 'Posts',
       href: '/posts',
       icon: PencilIcon,
-      current: currentPath === '/posts/',
+      current: currentPath === '/posts',
     },
     {
       name: 'Resume',
