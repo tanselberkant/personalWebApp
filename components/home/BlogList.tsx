@@ -1,13 +1,14 @@
-'use client';
 import React from 'react';
 import { formatDate } from '../../utils/dateFormater';
+import Image from 'next/image';
+import urlFor from '@/utils/urlFormater';
+import ClientSideRoute from '../ClientSideRoute';
 
 type Props = {
   posts: Post[];
 };
 
 const BlogListHome = ({ posts }: Props) => {
-  // console.log(posts);
   return (
     <>
       <div className="grid grid-cols-12 gap-4 mb-20">
@@ -20,35 +21,43 @@ const BlogListHome = ({ posts }: Props) => {
             Here's the latest posts I've written and published...
           </p>
           {posts.map((post) => (
-            <div
+            <ClientSideRoute
               key={post._id}
-              className="flex flex-col items-center rounded-md  md:flex-row my-6 border-[1.5px] border-light-cardBorder dark:border-dark-cardBorder  shadow-2xl px-4 py-4 cursor-pointer"
+              route={`/post/${post.slug.current}`}
             >
-              {/* POST IMAGE WILL BE THERE */}
-              <div className=" w-44 h-40 bg-slate-500 flex-shrink-0 mb-2 md:mb-0 rounded-md"></div>
-              <div className="px-4">
-                {/* POST DATE */}
-                <div className=" text-light-smallHeader dark:text-dark-smallHeader font-bold text-lg">
-                  {formatDate(post._createdAt)}
+              <div className="customShadow flex flex-col items-center rounded-md  md:flex-row my-6 border-[1.5px] border-light-cardBorder dark:border-dark-cardBorder  px-4 py-4 cursor-pointer">
+                {/* POST IMAGE WILL BE THERE */}
+                <div className=" w-44 h-40  flex-shrink-0 mb-2 md:mb-0 rounded-md">
+                  <Image
+                    className="object-fit w-full h-full"
+                    alt={`${post.title}-image`}
+                    src={urlFor(post.mainImage).url()}
+                    width={100}
+                    height={100}
+                  />
                 </div>
-                {/* POST TITLE */}
-                <div className="text-light-textDescription dark:text-dark-textDescription font-semibold text-lg">
-                  {post.title}
-                </div>
-                {/* POST SUBSCRIBED DESC */}
-                <div className="text-light-textDescription dark:text-dark-textDescription">
-                  {/* {post.description} */}
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Distinctio perferendis architecto accusamus quos...
-                </div>
-                {/* POST CATEGORIES */}
-                <div className=" text-light-cardBorder dark:text-dark-cardBorder text-base mt-2">
-                  {post.categories.map((category) => (
-                    <span key={category._id}>{category.title}</span>
-                  ))}
+                <div className="px-4">
+                  {/* POST DATE */}
+                  <div className=" text-light-smallHeader dark:text-dark-smallHeader font-bold text-lg">
+                    {formatDate(post._createdAt)}
+                  </div>
+                  {/* POST TITLE */}
+                  <div className="text-light-textDescription dark:text-dark-textDescription font-semibold text-lg">
+                    {post.title}
+                  </div>
+                  {/* POST SUBSCRIBED DESC */}
+                  <div className="text-light-textDescription dark:text-dark-textDescription line-clamp-2">
+                    {post.description}
+                  </div>
+                  {/* POST CATEGORIES */}
+                  <div className=" text-light-cardBorder dark:text-dark-cardBorder text-base mt-2">
+                    {post.categories.map((category) => (
+                      <span key={category._id}>{category.title}</span>
+                    ))}
+                  </div>
                 </div>
               </div>
-            </div>
+            </ClientSideRoute>
           ))}
         </div>
       </div>

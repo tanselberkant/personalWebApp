@@ -17,7 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <Head />
-      <body className={inconsolata.className}>
+      <body className={inconsolata.className + 'max-w-7xl mx-auto'}>
         <Provider>{children}</Provider>
       </body>
     </html>

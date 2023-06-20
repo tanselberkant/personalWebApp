@@ -8,7 +8,7 @@ const query = groq`
 *[_type=='post'] {
   ...,
   categories[]->
-} | order(_createdAt desc)
+} | order(_createdAt desc)[0..2]
 `;
 
 export default async function HomePage() {

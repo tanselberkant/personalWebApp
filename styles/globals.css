@@ -15,3 +15,13 @@ body {
     color-scheme: dark;
   }
 }
+
+.customShadow {
+  box-shadow: 0px 5px 10px 0px #255973;
+  transition: 0.2s;
+}
+
+.customShadow:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 10px 20px 2px #255973;
+}
