@@ -45,13 +45,13 @@ const Layout: React.FC<LayoutProps> = ({
       name: 'Resume',
       href: '/resume',
       icon: IdentificationIcon,
-      current: currentPath === '/resume/',
+      current: currentPath === '/resume',
     },
     {
       name: 'Dashboard',
       href: '/dashboard',
       icon: ChartBarIcon,
-      current: currentPath === '/dashboard/',
+      current: currentPath === '/dashboard',
     },
   ];
 
