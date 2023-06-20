@@ -1,4 +1,4 @@
-import BlogList from '@/components/BlogList';
+import BlogListHome from '@/components/home/BlogList';
 import HeroSection from '@/components/home/HeroSection';
 import Layout from '@/components/layout/Layout';
 import { client } from '@/lib/sanity.client';
@@ -7,7 +7,6 @@ import { groq } from 'next-sanity';
 const query = groq`
 *[_type=='post'] {
   ...,
-  author->,
   categories[]->
 } | order(_createdAt desc)
 `;
@@ -19,7 +18,7 @@ export default async function HomePage() {
     <>
       <Layout pageTitle="Home" currentPath={'/'}>
         <HeroSection />
-        <BlogList posts={posts} />
+        <BlogListHome posts={posts} />
       </Layout>
     </>
   );

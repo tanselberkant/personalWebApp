@@ -3,7 +3,7 @@ import React from 'react';
 
 const HeroSection = () => {
   return (
-    <div className="grid gap-4 grid-cols-12 h-screen ">
+    <div className="grid gap-4 grid-cols-12 mb-40 ">
       {/* PERSONAL INFO SECTION */}
       <div className="col-span-12 lg:col-span-7 items-center md:mt-12 ">
         <h1 className="text-light-textDescription dark:text-dark-textDescription text-3xl md:text-4xl  font-bold">
