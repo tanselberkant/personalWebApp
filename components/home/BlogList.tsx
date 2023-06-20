@@ -23,7 +23,7 @@ const BlogListHome = ({ posts }: Props) => {
           {posts.map((post) => (
             <ClientSideRoute
               key={post._id}
-              route={`/post/${post.slug.current}`}
+              route={`/posts/${post.slug.current}`}
             >
               <div className="customShadow flex flex-col items-center rounded-md  md:flex-row my-6 border-[1.5px] border-light-cardBorder dark:border-dark-cardBorder  px-4 py-4 cursor-pointer">
                 {/* POST IMAGE WILL BE THERE */}
