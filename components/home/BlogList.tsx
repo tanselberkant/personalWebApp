@@ -52,7 +52,12 @@ const BlogListHome = ({ posts }: Props) => {
                   {/* POST CATEGORIES */}
                   <div className=" text-light-cardBorder dark:text-dark-cardBorder text-base mt-2">
                     {post.categories.map((category) => (
-                      <span key={category._id}>{category.title}</span>
+                      <span
+                        className="bg-dark-secondary px-3 py-1 text-white rounded-full text-sm font-semibold mt-4 mr-1"
+                        key={category._id}
+                      >
+                        {category.title}
+                      </span>
                     ))}
                   </div>
                 </div>

@@ -14,7 +14,7 @@ const PostLists = ({ posts }: Props) => {
       {posts.map((post) => (
         <ClientSideRoute key={post._id} route={`/posts/${post.slug.current}`}>
           <div className="customShadow flex flex-col items-center rounded-md  md:flex-row my-6 border-[1.5px] border-light-cardBorder dark:border-dark-cardBorder  px-4 py-4 cursor-pointer">
-            {/* POST IMAGE WILL BE THERE */}
+            {/* POST IMAGE  */}
             <div className=" w-44 h-40  flex-shrink-0 mb-2 md:mb-0 rounded-md">
               <Image
                 className="object-fit w-full h-full"
@@ -40,7 +40,12 @@ const PostLists = ({ posts }: Props) => {
               {/* POST CATEGORIES */}
               <div className=" text-light-cardBorder dark:text-dark-cardBorder text-base mt-2">
                 {post.categories.map((category) => (
-                  <span key={category._id}>{category.title}</span>
+                  <span
+                    className="bg-dark-secondary px-3 py-1 text-white rounded-full text-sm font-semibold mt-4 mr-1"
+                    key={category._id}
+                  >
+                    {category.title}
+                  </span>
                 ))}
               </div>
             </div>
