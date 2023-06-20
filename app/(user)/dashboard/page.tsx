@@ -1,26 +1,8 @@
-'use client';
 import Layout from '@/components/layout/Layout';
+// import githubService from '@/services/githubService';
+// import { GetServerSideProps } from 'next';
 
 export default async function DashboardPage() {
-  // var myHeaders = new Headers();
-  // myHeaders.append(
-  //   'Authorization',
-  //   `${process.env.NEXT_PUBLIC_GITHUB_API_TOKEN}`
-  // );
-
-  // var requestOptions = {
-  //   method: 'GET',
-  //   headers: myHeaders,
-  //   redirect: undefined,
-  // };
-
-  // fetch(
-  //   'https://api.github.com/repos/tanselberkant/personalWebApp/commits',
-  //   requestOptions
-  // )
-  //   .then((response) => response.json())
-  //   .then((result) => console.log(result))
-  //   .catch((error) => console.log('error', error));
   return (
     <>
       <Layout pageTitle="Dashboard" currentPath={'/dashboard'}>
@@ -36,3 +18,22 @@ export default async function DashboardPage() {
     </>
   );
 }
+
+// Using getServerSideProps to fetch data at request time
+// The following example shows how to fetch data at request time and pre-render the result.
+
+// function Page({ data }) {
+//   // Render data...
+// }
+
+// // This gets called on every request
+// export async function getServerSideProps() {
+//   // Fetch data from external API
+//   const res = await fetch(`https://.../data`)
+//   const data = await res.json()
+
+//   // Pass data to the page via props
+//   return { props: { data } }
+// }
+
+// export default Page
