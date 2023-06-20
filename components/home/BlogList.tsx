@@ -1,12 +1,13 @@
 'use client';
 import React from 'react';
+import { formatDate } from '../../utils/dateFormater';
 
 type Props = {
   posts: Post[];
 };
 
 const BlogListHome = ({ posts }: Props) => {
-  console.log(posts);
+  // console.log(posts);
   return (
     <>
       <div className="grid grid-cols-12 gap-4 mb-20">
@@ -21,10 +22,10 @@ const BlogListHome = ({ posts }: Props) => {
           {posts.map((post) => (
             <div
               key={post._id}
-              className="flex flex-col items-center  md:flex-row my-6 border-[1.5px] border-light-cardBorder dark:border-dark-cardBorder  shadow-2xl px-4 py-4 cursor-pointer"
+              className="flex flex-col items-center rounded-md  md:flex-row my-6 border-[1.5px] border-light-cardBorder dark:border-dark-cardBorder  shadow-2xl px-4 py-4 cursor-pointer"
             >
               {/* POST IMAGE WILL BE THERE */}
-              <div className=" w-44 h-40 bg-slate-500 flex-shrink-0 mb-2 md:mb-0 "></div>
+              <div className=" w-44 h-40 bg-slate-500 flex-shrink-0 mb-2 md:mb-0 rounded-md"></div>
               <div className="px-4">
                 {/* POST DATE */}
                 <div className=" text-light-smallHeader dark:text-dark-smallHeader font-bold text-lg">
@@ -46,11 +47,6 @@ const BlogListHome = ({ posts }: Props) => {
                     <span key={category._id}>{category.title}</span>
                   ))}
                 </div>
-
-                {/* Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Pariatur aut rem natus? Veniam sunt dignissimos voluptas ipsa
-                perferendis incidunt enim labore! Ratione iure placeat quis
-                voluptatum similique magni ea optio. */}
               </div>
             </div>
           ))}
@@ -61,14 +57,3 @@ const BlogListHome = ({ posts }: Props) => {
 };
 
 export default BlogListHome;
-
-function formatDate(dateString: string): string {
-  const date = new Date(dateString);
-  const options: Intl.DateTimeFormatOptions = {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-  };
-  const formatter = new Intl.DateTimeFormat('en-US', options);
-  return formatter.format(date);
-}
