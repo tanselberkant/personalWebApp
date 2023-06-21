@@ -1,7 +1,6 @@
 import Layout from '../../../components/layout/Layout';
-
-// import githubService from '@/services/githubService';
-// import { GetServerSideProps } from 'next';
+import { GetServerSideProps, InferGetServerSidePropsType } from 'next';
+import githubService from '@/services/githubService';
 
 export default async function DashboardPage() {
   return (
@@ -19,3 +18,10 @@ export default async function DashboardPage() {
     </>
   );
 }
+// export const getServerSideProps: GetServerSideProps<{
+//   repo: any;
+// }> = async () => {
+//   const repo = await githubService.getPersonalWebAppReposCommits();
+//   console.log(repo);
+//   return { props: { repo } };
+// };

@@ -2,13 +2,11 @@ import { AxiosResponse } from 'axios';
 import gitHttpClient from '@/utils/gitHttpClient';
 
 class GitHubService {
-  responseBody = (response: AxiosResponse) => response.data;
-
   public async getPersonalWebAppReposCommits() {
-    const { data } = await gitHttpClient.get(
+    const response = await gitHttpClient.get(
       'repos/tanselberkant/personalWebApp/commits'
     );
-    return data;
+    return response.data;
   }
 }
 
