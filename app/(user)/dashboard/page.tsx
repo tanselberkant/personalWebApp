@@ -1,4 +1,5 @@
-import Layout from '@/components/layout/Layout';
+import Layout from '../../../components/layout/Layout';
+
 // import githubService from '@/services/githubService';
 // import { GetServerSideProps } from 'next';
 
@@ -18,22 +19,3 @@ export default async function DashboardPage() {
     </>
   );
 }
-
-// Using getServerSideProps to fetch data at request time
-// The following example shows how to fetch data at request time and pre-render the result.
-
-// function Page({ data }) {
-//   // Render data...
-// }
-
-// // This gets called on every request
-// export async function getServerSideProps() {
-//   // Fetch data from external API
-//   const res = await fetch(`https://.../data`)
-//   const data = await res.json()
-
-//   // Pass data to the page via props
-//   return { props: { data } }
-// }
-
-// export default Page

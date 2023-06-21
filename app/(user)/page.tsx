@@ -1,6 +1,7 @@
-import BlogListHome from '@/components/home/BlogList';
-import HeroSection from '@/components/home/HeroSection';
-import Layout from '@/components/layout/Layout';
+import BlogListHome from '../../components/home/BlogListHome';
+import HeroSection from '../../components/home/HeroSection';
+import Layout from '../../components/layout/Layout';
+
 import { client } from '@/lib/sanity.client';
 import { groq } from 'next-sanity';
 
