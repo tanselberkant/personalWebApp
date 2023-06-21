@@ -1,5 +1,5 @@
 import React from 'react';
-import ClientSideRoute from '../ClientSideRoute';
+import ClientSideRoute from '../../routes/ClientSideRoute';
 import Image from 'next/image';
 import urlFor from '@/utils/urlFormater';
 import { formatDate } from '@/utils/dateFormater';

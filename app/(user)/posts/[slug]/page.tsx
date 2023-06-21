@@ -13,16 +13,6 @@ type Props = {
   };
 };
 
-const components = {
-  types: {
-    code: (props: { node: any }) => (
-      <pre data-language={props.node.language}>
-        <code>{props.node.code}</code>
-      </pre>
-    ),
-  },
-};
-
 async function Post({ params: { slug } }: Props) {
   const query = groq`
     *[_type=='post' && slug.current == $slug][0]

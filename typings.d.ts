@@ -67,3 +67,51 @@ interface Title {
   _type: 'string';
   current: string;
 }
+
+interface CV extends Base {
+  fullName: string;
+  email: string;
+  phone: string;
+  address: string;
+  education: Education[];
+  experience: Experience[];
+  skills: Skill[];
+  languages: Language[];
+  certifications: Certification[];
+}
+
+interface Education {
+  institution: string;
+  degree: string;
+  startDate: string;
+  endDate: string;
+  logo: Image;
+}
+
+interface Experience {
+  company: string;
+  position: string;
+  startDate: string;
+  endDate: string;
+  responsibilities: string[];
+  technologies: string[];
+  logo: Image;
+}
+
+interface Skill {
+  skill: string;
+  logo: Image;
+}
+
+interface Language {
+  language: string;
+  proficiency: string;
+}
+
+interface Certification {
+  name: string;
+  date: string;
+  logo: Image;
+  institution: string;
+  link: string;
+}

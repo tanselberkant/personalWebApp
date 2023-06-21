@@ -135,7 +135,33 @@ export default defineType({
       name: 'skills',
       title: 'Skills',
       type: 'array',
-      of: [{ type: 'string' }],
+      of: [
+        {
+          type: 'object',
+          fields: [
+            defineField({
+              name: 'skill',
+              title: 'Skill',
+              type: 'string',
+            }),
+            defineField({
+              name: 'logo',
+              title: 'Logo',
+              type: 'image',
+              options: {
+                hotspot: true,
+              },
+              fields: [
+                {
+                  name: 'alt',
+                  type: 'string',
+                  title: 'Alternative Text',
+                },
+              ],
+            }),
+          ],
+        },
+      ],
     }),
     defineField({
       name: 'languages',
