@@ -1,6 +1,6 @@
-import Layout from '../../../components/layout/Layout';
 import { GetServerSideProps, InferGetServerSidePropsType } from 'next';
 import githubService from '@/services/githubService';
+import Layout from '@/components/layout/Layout';
 
 export default async function DashboardPage() {
   return (

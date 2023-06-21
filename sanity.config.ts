@@ -12,7 +12,6 @@ import { schema } from './sanity/schema';
 import { mySanityTheme } from './sanity-theme';
 import StudioNavbar from './components/studio/StudioNavbar';
 import StudioLogo from './components/studio/StudioLogo';
-import { codeInput } from '@sanity/code-input';
 
 export default defineConfig({
   basePath: '/studio',
@@ -22,7 +21,6 @@ export default defineConfig({
   schema,
   plugins: [
     deskTool(),
-    codeInput(),
     // Vision is a tool that lets you query your content with GROQ in the studio
     // https://www.sanity.io/docs/the-vision-plugin
     visionTool({ defaultApiVersion: apiVersion }),

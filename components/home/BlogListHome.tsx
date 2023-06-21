@@ -2,7 +2,7 @@ import React from 'react';
 import { formatDate } from '../../utils/dateFormater';
 import Image from 'next/image';
 import urlFor from '@/utils/urlFormater';
-import ClientSideRoute from '../../routes/ClientSideRoute';
+import ClientSideRoute from '@/routes/ClientSideRoute';
 
 type Props = {
   posts: Post[];

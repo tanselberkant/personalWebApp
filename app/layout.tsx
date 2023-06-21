@@ -1,4 +1,4 @@
-import '../../styles/globals.css';
+import '../styles/globals.css';
 import Head from './head';
 import Provider from './providers';
 // import { Inconsolata } from '@next/font/google';
