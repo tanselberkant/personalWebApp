@@ -2,8 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: #e5e7eb;
+  max-width: 1480px;
 }
 
 .dark body {

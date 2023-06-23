@@ -1,5 +1,6 @@
 import { client } from '@/lib/sanity.client';
 import { groq } from 'next-sanity';
+import Link from 'next/link';
 import React from 'react';
 
 interface Category {
@@ -62,7 +63,9 @@ export default async function PostCategories() {
         </div>
         <div className="absolute bottom-4 right-4">
           <div className="flex justify-end underline text-light-smallHeader dark:text-dark-smallHeader">
-            Check Posts
+            <Link href={'/posts'} className="cursor-pointer">
+              Check Posts
+            </Link>
           </div>
         </div>
       </div>

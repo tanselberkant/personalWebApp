@@ -34,6 +34,10 @@ const Layout: React.FC<LayoutProps> = ({
   pageTitle,
   currentPath,
 }) => {
+  useEffect(() => {
+    window.scrollTo(0, 9);
+  }, []);
+
   const navigation = [
     { name: 'Home', href: '/', icon: HomeIcon, current: currentPath === '/' },
     {

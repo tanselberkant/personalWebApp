@@ -16,12 +16,12 @@ const CertificationsSection = ({ certifications }: Props) => {
       {certifications.map((certification, index) => (
         <div
           key={index}
-          className="customShadow flex flex-col items-center rounded-md  md:flex-row my-6 border-[1.5px] border-light-cardBorder dark:border-dark-cardBorder  px-4 py-4 cursor-pointer"
+          className="customShadow flex flex-col items-center rounded-md  md:flex-row my-6 border-[1.5px] border-light-cardBorder dark:border-dark-cardBorder  px-4 py-4 "
         >
           {/* CERTIFACATION IMAGE */}
           <div className="w-36 h-32 flex-shrink-0 mb-2 md:mb-0 rounded-md">
             <Image
-              className="object-fit w-full h-full"
+              className="object-contain w-full h-full"
               alt={`${certification.name}-image`}
               src={urlFor(certification.logo).url()}
               width={100}
@@ -42,13 +42,15 @@ const CertificationsSection = ({ certifications }: Props) => {
               {certification.institution}
             </div>
             {/* CERTIFAATION LINK */}
-            <a
-              href={certification.link}
-              target="_blank"
-              className="bg-dark-secondary px-3 py-1 text-white rounded-full text-sm font-semibold mt-4 mr-1"
-            >
-              Link
-            </a>
+            <div className="mt-3">
+              <a
+                href={certification.link}
+                target="_blank"
+                className="bg-dark-secondary px-4  py-1 text-white rounded-full text-sm font-semibold cursor-pointer"
+              >
+                Link
+              </a>
+            </div>
           </div>
         </div>
       ))}

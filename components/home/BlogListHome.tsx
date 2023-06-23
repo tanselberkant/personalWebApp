@@ -27,9 +27,9 @@ const BlogListHome = ({ posts }: Props) => {
             >
               <div className="customShadow flex flex-col items-center rounded-md  md:flex-row my-6 border-[1.5px] border-light-cardBorder dark:border-dark-cardBorder  px-4 py-4 cursor-pointer">
                 {/* POST IMAGE WILL BE THERE */}
-                <div className=" w-44 h-40  flex-shrink-0 mb-2 md:mb-0 rounded-md">
+                <div className=" w-32 h-28  flex-shrink-0 mb-2 md:mb-0 rounded-lg">
                   <Image
-                    className="object-contain w-full h-full"
+                    className="object-contain w-full h-full rounded-lg"
                     alt={`${post.title}-image`}
                     src={urlFor(post.mainImage).url()}
                     width={100}
@@ -46,9 +46,9 @@ const BlogListHome = ({ posts }: Props) => {
                     {post.title}
                   </div>
                   {/* POST SUBSCRIBED DESC */}
-                  <div className="text-light-textDescription dark:text-dark-textDescription line-clamp-2">
+                  {/* <div className="text-light-textDescription dark:text-dark-textDescription line-clamp-2">
                     {post.description}
-                  </div>
+                  </div> */}
                   {/* POST CATEGORIES */}
                   <div className=" text-light-cardBorder dark:text-dark-cardBorder text-base mt-2">
                     {post.categories.map((category) => (

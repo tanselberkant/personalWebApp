@@ -9,7 +9,7 @@ const SocialLinks = () => {
           href="https://github.com/tanselberkant"
           target="_blank"
           rel="noreferrer me"
-          className="flex items-center gap-3"
+          className="flex items-center gap-3 hover:text-gray-500"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -30,7 +30,7 @@ const SocialLinks = () => {
           href="https://linkedin.com/in/tanselberkantoflaz"
           target="_blank"
           rel="noreferrer"
-          className="flex items-center gap-3"
+          className="flex items-center gap-3 hover:text-gray-500"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -51,7 +51,7 @@ const SocialLinks = () => {
           href="mailto:tanselberkant@gmail.com"
           target="_blank"
           rel="noreferrer "
-          className="flex items-center gap-3"
+          className="flex items-center gap-3 hover:text-gray-500"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
