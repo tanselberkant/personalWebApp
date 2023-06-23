@@ -1,9 +1,13 @@
 import githubService from '@/services/githubService';
 import Layout from '@/components/layout/Layout';
 import RepoActivities from '@/components/dashboard/RepoActivities';
+import GithubActivities from '@/components/dashboard/GithubActivities';
+import axios from 'axios';
 
 export default async function DashboardPage() {
   const repoCommits: any = await getRepoCommits();
+
+  const contributions: any = await getGitContributions();
 
   return (
     <>
@@ -18,6 +22,7 @@ export default async function DashboardPage() {
             sourced MDX files from around my site.
           </p>
           <RepoActivities repoCommits={repoCommits} />
+          <GithubActivities contrubitions={contributions} />
         </div>
       </Layout>
     </>
@@ -27,4 +32,12 @@ export default async function DashboardPage() {
 const getRepoCommits = async () => {
   const res = await githubService.getPersonalWebAppReposCommits();
   return res;
+};
+
+const getGitContributions = async () => {
+  const res = await axios.get(
+    'https://github-contributions-api.jogruber.de/v4/tanselberkant?y=last'
+  );
+
+  return res.data;
 };
