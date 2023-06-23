@@ -1,5 +1,5 @@
-import Layout from '../../../components/layout/Layout';
-import PostLists from '../../../components/posts/PostLists';
+import Layout from '@/components/layout/Layout';
+import PostLists from '@/components/posts/PostLists';
 import { client } from '@/lib/sanity.client';
 import { groq } from 'next-sanity';
 

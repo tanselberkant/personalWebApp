@@ -1,8 +1,8 @@
 import React from 'react';
-import ClientSideRoute from '../../routes/ClientSideRoute';
 import Image from 'next/image';
 import urlFor from '@/utils/urlFormater';
 import { formatDate } from '@/utils/dateFormater';
+import ClientSideRoute from '@/routes/ClientSideRoute';
 
 type Props = {
   posts: Post[];
