@@ -2,17 +2,18 @@ import githubService from '@/services/githubService';
 import Layout from '@/components/layout/Layout';
 import RepoActivities from '@/components/dashboard/RepoActivities';
 import GithubActivities from '@/components/dashboard/GithubActivities';
+import PostCategories from '@/components/dashboard/PostCategories';
+import SiteVisitor from '@/components/dashboard/SiteVisitor';
 import axios from 'axios';
 
 export default async function DashboardPage() {
   const repoCommits: any = await getRepoCommits();
-
   const contributions: any = await getGitContributions();
 
   return (
     <>
       <Layout pageTitle="Dashboard" currentPath={'/dashboard'}>
-        <div className=" mb-10">
+        <div className=" mb-10 pb-20">
           <h1 className=" text-light-textHeader dark:text-dark-textHeader uppercase text-4xl font-bold">
             Dashboard
           </h1>
@@ -23,6 +24,14 @@ export default async function DashboardPage() {
           </p>
           <RepoActivities repoCommits={repoCommits} />
           <GithubActivities contrubitions={contributions} />
+          <div className="grid grid-cols-12 gap-4 my-14  items-stretch">
+            <div className=" col-span-12 md:col-span-6 ">
+              <PostCategories />
+            </div>
+            <div className=" col-span-12 md:col-span-6 ">
+              <SiteVisitor />
+            </div>
+          </div>
         </div>
       </Layout>
     </>

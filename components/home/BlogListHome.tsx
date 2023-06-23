@@ -29,7 +29,7 @@ const BlogListHome = ({ posts }: Props) => {
                 {/* POST IMAGE WILL BE THERE */}
                 <div className=" w-44 h-40  flex-shrink-0 mb-2 md:mb-0 rounded-md">
                   <Image
-                    className="object-fit w-full h-full"
+                    className="object-contain w-full h-full"
                     alt={`${post.title}-image`}
                     src={urlFor(post.mainImage).url()}
                     width={100}
