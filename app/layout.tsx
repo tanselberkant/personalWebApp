@@ -1,7 +1,6 @@
 import '../styles/globals.css';
 import Head from './head';
 import Provider from './providers';
-// import { Inconsolata } from '@next/font/google';
 import { Inconsolata } from 'next/font/google';
 
 const inconsolata = Inconsolata({

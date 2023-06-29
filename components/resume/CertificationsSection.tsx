@@ -19,9 +19,9 @@ const CertificationsSection = ({ certifications }: Props) => {
           className="customShadow flex flex-col items-center rounded-md  md:flex-row my-6 border-[1.5px] border-light-cardBorder dark:border-dark-cardBorder  px-4 py-4 "
         >
           {/* CERTIFACATION IMAGE */}
-          <div className="w-36 h-32 flex-shrink-0 mb-2 md:mb-0 rounded-md">
+          <div className="w-36 h-32 flex-shrink-0 mb-2 md:mb-0 rounded-xl">
             <Image
-              className="object-contain w-full h-full"
+              className="object-contain w-full h-full rounded-xl"
               alt={`${certification.name}-image`}
               src={urlFor(certification.logo).url()}
               width={100}

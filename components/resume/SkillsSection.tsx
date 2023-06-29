@@ -16,19 +16,21 @@ const SkillsSection = ({ skills }: Props) => {
         {skills.map((skill, index) => (
           <div
             key={index}
-            className="border-2 border-light-cardBorder dark:border-dark-cardBorder p-4 text-center min-h-36 h-36 "
+            className="border-2 rounded-lg border-light-cardBorder dark:border-dark-cardBorder  text-center min-h-40 h-40 cursor-pointer custom-skill-card"
           >
-            <div className="min-h-16 h-16 rounded-lg w-full">
+            <div className="skill-card-front  h-full w-full p-4">
               <Image
                 src={urlFor(skill.logo).url()}
                 className="rounded-lg w-full h-full object-contain"
                 width={100}
                 height={100}
-                alt="lolo"
+                alt={`${skill.skill}-logo`}
               />
             </div>
-            <div className="text-light-textDescription dark:text-dark-textDescription my-2 text-sm">
-              {skill.skill}{' '}
+            <div className="skill-card-back bg-dark-cardBorder text-dark-textDescription">
+              <div className="w-full h-full flex items-center justify-center font-semibold text-xl px-2">
+                <h1>{skill.skill}</h1>
+              </div>
             </div>
           </div>
         ))}
