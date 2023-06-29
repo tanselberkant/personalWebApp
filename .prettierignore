@@ -1,0 +1,26 @@
+# dependencies
+/node_modules
+
+# build
+/.cache
+/.next
+/tsconfig.tsbuildinfo
+
+
+# test
+/coverage
+
+# host
+/.vercel
+
+# secrets
+/.env*
+
+# logs
+/debug.log
+
+# os
+.DS_Store
+
+# templates
+*.hbs
