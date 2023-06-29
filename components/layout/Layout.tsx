@@ -128,10 +128,8 @@ const Layout: React.FC<LayoutProps> = ({
                       <li>
                         <ul role="list" className="-mx-2 space-y-8">
                           {navigation.map((item) => (
-                            <li key={item.name}>
-                              <Link
-                                // href={item.href}
-                                href={item.href}
+                            <Link key={item.name} href={item.href}>
+                              <li
                                 className={classNames(
                                   item.current
                                     ? `bg-light-secondary dark:bg-dark-secondary text-light-smallHeader dark:text-dark-smallHeader`
@@ -149,8 +147,8 @@ const Layout: React.FC<LayoutProps> = ({
                                   aria-hidden="true"
                                 />
                                 {item.name}
-                              </Link>
-                            </li>
+                              </li>
+                            </Link>
                           ))}
                           <ThemeSwitcher />
                         </ul>
@@ -178,10 +176,8 @@ const Layout: React.FC<LayoutProps> = ({
               <li className=" px-6">
                 <ul role="list" className="-mx-2 space-y-6">
                   {navigation.map((item) => (
-                    <li key={item.name}>
-                      <Link
-                        // href={item.href}
-                        href={item.href}
+                    <Link key={item.name} href={item.href}>
+                      <li
                         className={classNames(
                           item.current
                             ? ` border-1 rounded-full border-light-secondary dark:border-dark-secondary  text-light-smallHeader dark:text-dark-smallHeader hover:text-light-secondary dark:hover:text-dark-secondary`
@@ -199,8 +195,8 @@ const Layout: React.FC<LayoutProps> = ({
                           aria-hidden="true"
                         />
                         {item.name}
-                      </Link>
-                    </li>
+                      </li>
+                    </Link>
                   ))}
 
                   {/* THEME BUTTON */}

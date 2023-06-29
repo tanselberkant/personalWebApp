@@ -42,7 +42,10 @@ export default async function PostCategories() {
       </h2>
       <div className="my-10 border-2 border-light-cardBorder dark:border-dark-cardBorder rounded-lg p-4 h-[350px] max-h-[350px] relative ">
         {sortedCategories.map((category: Category, index: number) => (
-          <div className="w-full bg-light-smallHeader rounded-full dark:bg-gray-700 ">
+          <div
+            className="w-full bg-light-smallHeader rounded-full dark:bg-gray-700"
+            key={index}
+          >
             <div
               className={`bg-light-textHeader dark:bg-dark-textHeader text-xs font-medium text-dark-textDescription text-center my-2 p-0.5 leading-none rounded-full shadow-lg `}
               style={{ width: `${(category.postCount / totalPosts) * 100}%` }}
@@ -52,8 +55,8 @@ export default async function PostCategories() {
           </div>
         ))}
         <div className="my-6 text-base">
-          {sortedCategories.map((category: Category) => (
-            <div className="flex items-center">
+          {sortedCategories.map((category: Category, index: number) => (
+            <div className="flex items-center" key={index}>
               <div className="bg-light-textHeader dark:text-dark-textHeader h-3 w-3 rounded-full my-2" />
               <div className="text-base text-light-textDescription dark:text-dark-textDescription ml-2">
                 {category.title}
