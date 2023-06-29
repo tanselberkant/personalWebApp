@@ -13,6 +13,8 @@ const query = groq`
   } | order(_createdAt desc)[0]
 `;
 
+export const revalidate = 3600; // Revalidate this page every one hour
+
 export default async function ResumePage() {
   const resume: CV = await client.fetch(query);
   // console.log(resume);
