@@ -11,6 +11,8 @@ const query = groq`
 } | order(_createdAt desc)[0..2]
 `;
 
+export const revalidate = 3600; // Revalidate this page every one hour
+
 export default async function HomePage() {
   const posts = await client.fetch(query);
 
