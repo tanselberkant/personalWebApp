@@ -59,3 +59,11 @@ body {
   text-align: center;
   transform: rotateY(180deg);
 }
+
+.interact-info {
+  transition: opacity 0.5s ease-in-out;
+}
+
+.interact-info.show {
+  opacity: 1;
+}

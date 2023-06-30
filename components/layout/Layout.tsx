@@ -1,6 +1,7 @@
 'use client';
 import React, { Fragment, useState, useContext, useEffect } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
+import { classNames } from '@/utils/conditionalClasses';
 import {
   Bars3Icon,
   HomeIcon,
@@ -18,10 +19,6 @@ const inconsolata = Inconsolata({
   subsets: ['latin'],
   weight: ['400', '500', '700', '900'],
 });
-
-function classNames(...classes: any) {
-  return classes.filter(Boolean).join(' ');
-}
 
 interface LayoutProps {
   children: React.ReactNode;

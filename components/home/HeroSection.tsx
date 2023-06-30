@@ -1,8 +1,14 @@
 'use client';
-import React from 'react';
+import React, { useState } from 'react';
 import Spline from '@splinetool/react-spline';
+import { classNames } from '@/utils/conditionalClasses';
 
 const HeroSection = () => {
+  const [isHovered, setIsHovered] = useState(false);
+
+  const hoverDiv = () => setIsHovered(true);
+  const unHoverDiv = () => setIsHovered(false);
+
   return (
     <div className="grid gap-4 grid-cols-12 mb-40 ">
       {/* PERSONAL INFO SECTION */}
@@ -38,9 +44,19 @@ const HeroSection = () => {
         </p>
       </div>
       {/* HOCKEY THING WILL BE THERE  */}
-      <div className="col-span-12 lg:col-span-5 text-center flex justify-center rounded-xl relative">
+      <div
+        className="col-span-12 lg:col-span-5 text-center flex justify-center items-center relative cursor-pointer sm:w-[50%] sm:mx-auto lg:w-full"
+        onMouseEnter={hoverDiv}
+        onMouseLeave={unHoverDiv}
+      >
         <Spline scene="https://prod.spline.design/V58XNZOtjAQFJ77l/scene.splinecode" />
-        <p className="absolute bottom-0 left-2 text-gray-400 text-xs   ">
+
+        <p
+          className={classNames(
+            isHovered ? 'opacity-100' : 'opacity-0',
+            'absolute bottom-0 left-2 text-gray-400 text-xs interact-info transition-opacity duration-500'
+          )}
+        >
           You can interact with this hockey helmet
         </p>
       </div>
