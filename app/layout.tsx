@@ -2,6 +2,7 @@ import '../styles/globals.css';
 import Head from './head';
 import Provider from './providers';
 import { Inconsolata } from 'next/font/google';
+import Script from 'next/script';
 
 const inconsolata = Inconsolata({
   subsets: ['latin'],
@@ -16,6 +17,19 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <Head />
+      {/*  ----> GOOGLE ANALYTICS */}
+      <Script
+        strategy="afterInteractive"
+        src="https://www.googletagmanager.com/gtag/js?id=G-2H1YZV1BRS"
+      />
+
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-2H1YZV1BRS'); `}
+      </Script>
+      {/*  <---- GOOGLE ANALYTICS */}
       <body className={inconsolata.className + 'max-w-7xl mx-auto'}>
         <Provider>{children}</Provider>
       </body>
