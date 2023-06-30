@@ -2,6 +2,7 @@
 import React, { Fragment, useState, useContext, useEffect } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
 import { classNames } from '@/utils/conditionalClasses';
+
 import {
   Bars3Icon,
   HomeIcon,
@@ -15,6 +16,7 @@ import NavbarLogo from './NavbarLogo';
 import ThemeSwitcher from './ThemeSwitcher';
 import { Inconsolata } from 'next/font/google';
 import SocialLinks from './SocialLinks';
+import Footer from './Footer';
 const inconsolata = Inconsolata({
   subsets: ['latin'],
   weight: ['400', '500', '700', '900'],
@@ -233,6 +235,7 @@ const Layout: React.FC<LayoutProps> = ({
           <div className="px-4 sm:px-6 lg:px-8 font-custom">
             <div className={inconsolata.className}>{children}</div>
           </div>
+          <Footer />
         </main>
       </div>
     </>
