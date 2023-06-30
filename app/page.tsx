@@ -12,13 +12,13 @@ const query = groq`
 `;
 
 export default async function HomePage() {
-  const posts = await client.fetch(query);
+  // const posts = await client.fetch(query);
 
   return (
     <>
       <Layout pageTitle="Home" currentPath={'/'}>
         <HeroSection />
-        <BlogListHome posts={posts} />
+        {/* <BlogListHome posts={posts} /> */}
       </Layout>
     </>
   );

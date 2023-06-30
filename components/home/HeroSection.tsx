@@ -45,7 +45,7 @@ const HeroSection = () => {
       </div>
       {/* HOCKEY THING WILL BE THERE  */}
       <div
-        className="col-span-12 lg:col-span-5 text-center flex justify-center items-center relative cursor-pointer sm:w-[50%] sm:mx-auto lg:w-full"
+        className="hidden lg:col-span-5 text-center lg:flex justify-center items-center relative cursor-pointer sm:w-[50%] sm:mx-auto lg:w-full"
         onMouseEnter={hoverDiv}
         onMouseLeave={unHoverDiv}
       >
