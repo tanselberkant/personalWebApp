@@ -1,4 +1,6 @@
+'use client';
 import React from 'react';
+import Spline from '@splinetool/react-spline';
 
 const HeroSection = () => {
   return (
@@ -36,7 +38,12 @@ const HeroSection = () => {
         </p>
       </div>
       {/* HOCKEY THING WILL BE THERE  */}
-      <div className="col-span-12 lg:col-span-5 text-center flex justify-center"></div>
+      <div className="col-span-12 lg:col-span-5 text-center flex justify-center rounded-xl relative">
+        <Spline scene="https://prod.spline.design/V58XNZOtjAQFJ77l/scene.splinecode" />
+        <p className="absolute bottom-0 left-2 text-gray-400 text-xs   ">
+          You can interact with this hockey helmet
+        </p>
+      </div>
     </div>
   );
 };

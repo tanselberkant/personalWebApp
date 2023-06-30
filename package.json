@@ -14,6 +14,8 @@
     "@portabletext/react": "^3.0.2",
     "@sanity/image-url": "^1.0.2",
     "@sanity/vision": "^3.12.1",
+    "@splinetool/react-spline": "^2.2.6",
+    "@splinetool/runtime": "^0.9.374",
     "@tailwindcss/line-clamp": "^0.4.4",
     "@types/node": "20.3.1",
     "@types/react": "18.2.12",
