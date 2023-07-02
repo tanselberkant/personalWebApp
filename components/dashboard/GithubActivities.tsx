@@ -53,5 +53,3 @@ const GithubActivities = ({ contrubitions }: Props) => {
 };
 
 export default GithubActivities;
-
-('{{count}} activities in {{year}}');

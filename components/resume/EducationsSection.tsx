@@ -1,3 +1,4 @@
+'use client';
 import urlFor from '@/utils/urlFormater';
 import { motion, useScroll } from 'framer-motion';
 import Image from 'next/image';
@@ -24,14 +25,16 @@ const EducationsSection = ({ educations }: Props) => {
       <div className="w-full mx-auto relative" ref={scrollRef}>
         <motion.div
           style={{ scaleY: scrollYProgress }}
-          className="absolute left-9 top-0 w-[4px] h-full bg-light-cardBorder dark:bg-light-cardBorder origin-top md:w-[2px] md:left-[35px] xs:left-[10px] "
+          // className="absolute left-9 top-0 w-[4px] h-full bg-light-cardBorder dark:bg-light-cardBorder origin-top md:w-[2px] md:left-[35px] xs:left-[10px] "
+          className="absolute left-9  top-0 w-[4px] h-full bg-light-cardBorder dark:bg-light-cardBorder origin-top
+          md:w-[2px] md:left-[35px] xs:left-[10px] "
         />
-        <ul className="w-full flex flex-col items-start justify-between ml-18 md:ml-4 ">
+        <ul className="w-full flex flex-col items-start justify-between ml-14 md:ml-4 ">
           {educations.map((education, index) => (
             <li
               ref={liRef}
               key={index}
-              className="my-8 first:mt-0 last:mb-0 w-[60%] mx-auto flex flex-col items-center justify-between "
+              className="my-12 first:mt-0 last:mb-0 w-[90%] md:w-[60%] mx-auto flex flex-col items-center justify-between "
             >
               <div className="absolute left-4 stroke-1  stroke-light-cardBorder">
                 <Image

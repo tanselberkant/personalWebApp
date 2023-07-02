@@ -20,14 +20,14 @@ export default function RootLayout({
       {/*  ----> GOOGLE ANALYTICS */}
       <Script
         strategy="afterInteractive"
-        src="https://www.googletagmanager.com/gtag/js?id=G-2H1YZV1BRS"
+        src="https://www.googletagmanager.com/gtag/js?id=G-WTYTEHMN9P"
       />
 
       <Script id="google-analytics" strategy="afterInteractive">
         {`window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-2H1YZV1BRS'); `}
+            gtag('config', 'G-WTYTEHMN9P'); `}
       </Script>
       {/*  <---- GOOGLE ANALYTICS */}
       <body className={inconsolata.className + 'max-w-7xl mx-auto'}>

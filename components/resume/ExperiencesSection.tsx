@@ -1,3 +1,4 @@
+'use client';
 import urlFor from '@/utils/urlFormater';
 import { motion, useScroll } from 'framer-motion';
 import Image from 'next/image';

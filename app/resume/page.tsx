@@ -1,4 +1,3 @@
-'use client';
 import Layout from '@/components/layout/Layout';
 import CertificationsSection from '@/components/resume/CertificationsSection';
 import EducationsSection from '@/components/resume/EducationsSection';
@@ -26,19 +25,35 @@ export default async function ResumePage() {
           <h1 className=" text-light-textHeader dark:text-dark-textHeader uppercase text-2xl font-bold">
             Resume
           </h1>
-          <p className="my-10  text-light-textDescription dark:text-dark-textDescription text-lg">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut ipsum et
-            sequi labore totam necessitatibus eius soluta nostrum quia error
-            recusandae libero tenetur iusto, expedita saepe, minima atque
-            excepturi sit. Lorem, ipsum dolor sit amet consectetur adipisicing
-            elit. Tenetur explicabo provident dolores cumque inventore
-            blanditiis. Nobis, atque molestias! Eaque autem provident sed.
-            Labore adipisci dolor impedit dolores sint hic necessitatibus. Lorem
-            ipsum dolor sit amet consectetur adipisicing elit. Quia
-            necessitatibus illo nesciunt, vero facere officia, voluptatem minus
-            quasi numquam quo aut veritatis suscipit libero inventore nihil
-            possimus architecto consequatur perferendis?
-          </p>
+          <div className="my-10  text-light-textDescription dark:text-dark-textDescription text-lg">
+            <p className="mb-4">
+              Hello, I'm Tansel. I embarked on an intriguing journey that began
+              with eight years as a professional ice hockey player and led me to
+              the captivating world of software development. The decision to
+              transition from the sports arena to the arena of codes and
+              algorithms was indeed a bold one, but it was fueled by my
+              unwavering passion for technology and problem-solving.
+            </p>
+            <p className="mb-4">
+              After dedicating several years to intense self-learning and driven
+              by my aspiration to make a significant impact in the software
+              industry, I took a crucial step and graduated from Kodluyoruz
+              Frontend Development Bootcamp. The Bootcamp, coupled with my
+              self-taught skills, served as the launchpad for my software
+              development career.
+            </p>
+            <p className="mb-4">
+              Since March 2022, I've been actively involved in the software
+              industry, undertaking various roles and ceaselessly enhancing my
+              skills. The excitement and vigor I once felt on the ice rinks have
+              found a new home in the realm of frontend development, where every
+              line of code I write, every application I build, sparks the same
+              thrill. My journey from the ice rink to the tech industry has been
+              a unique one, reinforcing my belief that with determination and
+              passion, one can reshape their career path and achieve their
+              dreams...
+            </p>
+          </div>
         </div>
         <ExperiencesSection experiences={resume.experience} />
         <EducationsSection educations={resume.education} />

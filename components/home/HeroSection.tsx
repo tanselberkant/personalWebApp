@@ -5,6 +5,7 @@ import { classNames } from '@/utils/conditionalClasses';
 
 const HeroSection = () => {
   const [isHovered, setIsHovered] = useState(false);
+  const [loadingSpline, setLoadingSpline] = useState(true);
 
   const hoverDiv = () => setIsHovered(true);
   const unHoverDiv = () => setIsHovered(false);
@@ -28,10 +29,13 @@ const HeroSection = () => {
         </p>
         <p className="mt-2 text-base md:text-lg">Hey there! 👋</p>
         <p className="mt-2  text-base md:text-lg">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum
-          neque voluptatibus sint sed vero. Inventore architecto, laboriosam
-          provident iure quos voluptatibus atque ex minus perferendis laborum
-          sit corporis, quis quod.
+          Hello, I'm Tansel. Once upon a time, I was a national ice hockey
+          player, but after 2-3 years of intense work and dedication, I realized
+          that the software industry was my true passion. I transferred the
+          speed and excitement of the ice rinks to the world of codes and
+          algorithms. Since March 2022, I've been actively working in the
+          software industry, taking on various roles and continually improving
+          myself.
         </p>
         <p className="mt-2 text-base md:text-lg">
           I now work at{' '}
@@ -49,7 +53,14 @@ const HeroSection = () => {
         onMouseEnter={hoverDiv}
         onMouseLeave={unHoverDiv}
       >
-        <Spline scene="https://prod.spline.design/V58XNZOtjAQFJ77l/scene.splinecode" />
+        {loadingSpline && <Loader />}
+        <Spline
+          onLoad={() => {
+            console.log('Spline loaded');
+            setLoadingSpline(false);
+          }}
+          scene="https://prod.spline.design/V58XNZOtjAQFJ77l/scene.splinecode"
+        />
 
         <p
           className={classNames(
@@ -65,3 +76,7 @@ const HeroSection = () => {
 };
 
 export default HeroSection;
+
+const Loader = () => {
+  return <div className="absolute top-0">Loading Hockey Helmet</div>;
+};
