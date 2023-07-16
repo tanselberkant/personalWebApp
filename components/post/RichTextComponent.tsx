@@ -1,9 +1,11 @@
 import urlFor from '@/utils/urlFormater';
 import Image from 'next/image';
 import Link from 'next/link';
-import Refractor from 'react-refractor';
 import { ClipboardIcon } from '@heroicons/react/24/solid';
 import { v4 as uuid } from 'uuid';
+import Refractor from 'react-refractor';
+import js from 'refractor/lang/javascript';
+Refractor.registerLanguage(js);
 
 export const RichTextComponents = {
   types: {
@@ -21,7 +23,7 @@ export const RichTextComponents = {
       const iconId = uuid();
       return (
         <div className="my-8 bg-gray-700 text-dark-textDescription px-4 py-3 ">
-          <Refractor language="js" value={value.code} />
+          <Refractor language="javascript" value={value.code} />
           <div className="flex justify-end">
             <ClipboardIcon
               id={`clipboard-icon-${iconId}`}
