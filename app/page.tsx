@@ -13,6 +13,16 @@ const query = groq`
 
 export const revalidate = 3600; // Revalidate this page every one hour
 
+export const metadata = {
+  title: 'Home',
+  description: 'Tansel Berkant Oflaz, @tanselberkant, Anasayfa, Home Page',
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 1,
+  },
+};
+
 export default async function HomePage() {
   const posts = await client.fetch(query);
 

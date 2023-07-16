@@ -30,6 +30,17 @@ export async function generateStaticParams() {
   }));
 }
 
+export const metadata = {
+  title: 'Blog Post',
+  description:
+    'Tansel Berkant Oflaz, @tanselberkant, blog yazısı, Tansel Berkant Oflaz blog post',
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 1,
+  },
+};
+
 async function Post({ params: { slug } }: Props) {
   const query = groq`
     *[_type=='post' && slug.current == $slug][0]

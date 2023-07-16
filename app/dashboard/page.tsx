@@ -6,6 +6,16 @@ import PostCategories from '@/components/dashboard/PostCategories';
 import SiteVisitor from '@/components/dashboard/SiteVisitor';
 import axios from 'axios';
 
+export const metadata = {
+  title: 'Dashboard',
+  description: 'tanselberkant.dev dashboard',
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 1,
+  },
+};
+
 export default async function DashboardPage() {
   const repoCommits: any = await getRepoCommits();
   const contributions: any = await getGitContributions();
