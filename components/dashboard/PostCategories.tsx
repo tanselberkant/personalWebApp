@@ -9,14 +9,6 @@ interface Category {
   postCount: number;
 }
 
-// const query = groq`
-// *[_type=="category"]{
-//     _id,
-//     title,
-//     "postCount": count(*[_type=="post" && references(^._id)])
-//   }
-// `;
-
 const query = groq`
 *[_type=="category"]{
     _id,
@@ -50,7 +42,7 @@ export default async function PostCategories() {
               className={`bg-light-textHeader dark:bg-dark-textHeader text-xs font-medium text-dark-textDescription text-center my-2 p-0.5 leading-none rounded-full shadow-lg `}
               style={{ width: `${(category.postCount / totalPosts) * 100}%` }}
             >
-              {(category.postCount / totalPosts) * 100}%
+              {((category.postCount / totalPosts) * 100).toFixed(1)}%
             </div>
           </div>
         ))}

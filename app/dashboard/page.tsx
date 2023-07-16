@@ -56,7 +56,10 @@ export default async function DashboardPage() {
             </p>
           </div>
           <RepoActivities repoCommits={repoCommits} />
-          <GithubActivities contrubitions={contributions} />
+          {contributions.contributions.length > 1 && (
+            <GithubActivities contrubitions={contributions} />
+          )}
+
           <div className="grid grid-cols-12 gap-4 my-14  items-stretch">
             <div className=" col-span-12 md:col-span-6 ">
               <PostCategories />
