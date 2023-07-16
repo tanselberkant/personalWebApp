@@ -21,14 +21,14 @@ const CertificationsSection = ({ certifications }: Props) => {
           {/* CERTIFACATION IMAGE */}
           <div className="w-36 h-32 flex-shrink-0 mb-2 md:mb-0 rounded-xl">
             <Image
-              className="object-contain w-full h-full rounded-xl"
+              className="object-contain w-full h-full  rounded-xl"
               alt={`${certification.name}-image`}
               src={urlFor(certification.logo).url()}
               width={100}
               height={100}
             />
           </div>
-          <div className="px-4">
+          <div className="px-4 w-full">
             {/* CERTIFICATION DATE */}
             <div className=" text-light-smallHeader dark:text-dark-smallHeader font-bold text-lg">
               {certification.date}

@@ -24,7 +24,7 @@ const PostLists = ({ posts }: Props) => {
                 height={100}
               />
             </div>
-            <div className="px-4">
+            <div className="px-4 w-full">
               {/* POST DATE */}
               <div className=" text-light-smallHeader dark:text-dark-smallHeader font-bold text-lg">
                 {formatDate(post._createdAt)}

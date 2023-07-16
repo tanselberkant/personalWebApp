@@ -22,9 +22,9 @@ export const RichTextComponents = {
     myCodeField: ({ value }: any) => {
       const iconId = uuid();
       return (
-        <div className="my-8 bg-gray-700 text-dark-textDescription px-4 py-3 ">
+        <div className="my-8 bg-gray-700 text-dark-textDescription px-4 py-3 overflow-x-auto relative ">
           <Refractor language="javascript" value={value.code} />
-          <div className="flex justify-end">
+          <div className="flex justify-end my-2">
             <ClipboardIcon
               id={`clipboard-icon-${iconId}`}
               className="w-6 h-6 cursor-pointer hover:text-gray-500 delay-75"
@@ -59,13 +59,13 @@ export const RichTextComponents = {
   },
   block: {
     h1: ({ children }: any) => (
-      <h1 className="text-5xl py-10 font-bold">{children} </h1>
+      <h1 className="text-3xl md:text-5xl py-10 font-bold">{children} </h1>
     ),
     h2: ({ children }: any) => (
-      <h1 className="text-4xl py-10 font-bold">{children} </h1>
+      <h1 className="text-2xl md:text-4xl py-10 font-bold">{children} </h1>
     ),
     h3: ({ children }: any) => (
-      <h1 className="text-3xl py-10 font-bold">{children} </h1>
+      <h1 className="text-xl md:text-3xl py-10 font-bold">{children} </h1>
     ),
     h4: ({ children }: any) => (
       <h1 className="text-2xl py-10 font-bold">{children} </h1>
