@@ -30,6 +30,17 @@ export async function generateStaticParams() {
   }));
 }
 
+export const metadata = {
+  title: 'Blog Post',
+  description:
+    'Tansel Berkant Oflaz, @tanselberkant, blog yazısı, Tansel Berkant Oflaz blog post',
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 1,
+  },
+};
+
 async function Post({ params: { slug } }: Props) {
   const query = groq`
     *[_type=='post' && slug.current == $slug][0]
@@ -44,7 +55,7 @@ async function Post({ params: { slug } }: Props) {
 
   return (
     <Layout currentPath="/posts" pageTitle="Post">
-      <article className="px-10 pb-28">
+      <article className="px-2 lg:px-10 pb-28">
         <section className="space-y-2 border-[1px] border-light-cardBorder dark:border-dark-cardBorder text-dark-textDescription dark:text-dark-textDescription ">
           <div className="relative min-h-56 flex flex-col md:flex-row justify-between">
             <div className="absolute top-0 w-full h-full opacity-10 blur-sm p-10">
@@ -58,19 +69,23 @@ async function Post({ params: { slug } }: Props) {
             <section className="p-5 bg-light-textHeader dark:bg-light-textHeader  w-full">
               <div className="flex flex-col md:flex-row justify-between gap-y-5">
                 <div>
-                  <h1 className="text-4xl font-extrabold">{post.title} </h1>
+                  <h1 className="text-xl lg:text-4xl font-extrabold">
+                    {post.title}{' '}
+                  </h1>
                   <p>{formatDate(post._createdAt)}</p>
                 </div>
                 <div className="flex items-center space-x-2">
                   <Image
-                    className="rounded-full w-16 h-16"
+                    className="rounded-full w-10 h-10 lg:w-16 lg:h-16"
                     src={urlFor(post.author.image).url()}
                     alt={post.author.name}
                     height={100}
                     width={100}
                   />
                   <div className="w-64">
-                    <h3 className="text-lg font-bold">{post.author.name} </h3>
+                    <h3 className="text-base lg:text-lg font-bold">
+                      {post.author.name}{' '}
+                    </h3>
                   </div>
                 </div>
               </div>

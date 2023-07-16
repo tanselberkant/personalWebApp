@@ -14,6 +14,17 @@ const query = groq`
 
 export const revalidate = 3600; // Revalidate this page every one hour
 
+export const metadata = {
+  title: 'Resume',
+  description:
+    'Tansel Berkant Oflaz resume, Tansel Berkant Oflaz CV, @tanselberkant resume',
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 1,
+  },
+};
+
 export default async function ResumePage() {
   const resume: CV = await client.fetch(query);
   // console.log(resume);
