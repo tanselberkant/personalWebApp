@@ -7,12 +7,14 @@ interface Category {
   id: string;
   title: string;
   postCount: number;
+  color: string;
 }
 
 const query = groq`
 *[_type=="category"]{
     _id,
     title,
+    color,
     "postCount": count(*[_type=="post" && references(^._id)])
   }[0..7]
 `;
@@ -39,8 +41,11 @@ export default async function PostCategories() {
             key={index}
           >
             <div
-              className={`bg-light-textHeader dark:bg-dark-textHeader text-xs font-medium text-dark-textDescription text-center my-2 p-0.5 leading-none rounded-full shadow-lg `}
-              style={{ width: `${(category.postCount / totalPosts) * 100}%` }}
+              className={` text-xs font-medium text-dark-textDescription text-center my-2 p-0.5 leading-none rounded-full shadow-lg `}
+              style={{
+                backgroundColor: category.color,
+                width: `${(category.postCount / totalPosts) * 100}%`,
+              }}
             >
               {((category.postCount / totalPosts) * 100).toFixed(1)}%
             </div>
@@ -49,7 +54,10 @@ export default async function PostCategories() {
         <div className="my-6 text-base">
           {sortedCategories.map((category: Category, index: number) => (
             <div className="flex items-center" key={index}>
-              <div className="bg-light-textHeader dark:text-dark-textHeader h-3 w-3 rounded-full my-2" />
+              <div
+                style={{ backgroundColor: category.color }}
+                className=" dark:text-dark-textHeader h-3 w-3 rounded-full my-2"
+              />
               <div className="text-base text-light-textDescription dark:text-dark-textDescription ml-2">
                 {category.title}
               </div>
