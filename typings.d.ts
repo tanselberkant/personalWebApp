@@ -6,6 +6,15 @@ type Base = {
   _updatedAt: string;
 };
 
+interface Project extends Base {
+  name: string;
+  description: string;
+  technologies: string[];
+  link: string;
+  image: Image;
+  slug: Slug;
+}
+
 interface Post extends Base {
   author: Author;
   body: Block[];
