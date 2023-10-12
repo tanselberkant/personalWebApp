@@ -40,8 +40,9 @@ const HeroSection = () => {
         <p className="mt-2 text-base md:text-lg">
           I now work at{' '}
           <a
+            target="_blank"
             className="text-light-smallHeader dark:text-dark-smallHeader"
-            href="https://community.rexven.com/"
+            href="https://www.rexven.com/"
           >
             Rexven
           </a>
