@@ -27,7 +27,7 @@ const Footer = () => {
         </Link>
       </div>
       <p className="text-light-textDescription dark:text-dark-textDescription text-sm">
-        © 2023 Tansel Berkant Oflaz. All Rights Reserved.
+        © {new Date().getFullYear()} Tansel Berkant Oflaz. All Rights Reserved.
       </p>
     </div>
   );

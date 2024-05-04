@@ -11,40 +11,29 @@ const HeroSection = () => {
   const unHoverDiv = () => setIsHovered(false);
 
   return (
-    <div className="grid gap-4 grid-cols-12 mb-40 ">
+    <div className="grid gap-4 grid-cols-12 mb-32 ">
       {/* PERSONAL INFO SECTION */}
       <div className="col-span-12 lg:col-span-7 items-center md:mt-12 ">
         <h1 className="text-light-textDescription dark:text-dark-textDescription text-3xl md:text-4xl  font-bold">
           Tansel Berkant Oflaz
         </h1>
-        <p className="mt-3  text-sm tracking-wide">
-          <span className="mr-2">Fronted Developer</span>
-          <a
-            className="text-light-smallHeader dark:text-dark-smallHeader underline"
-            target="_blank"
-            href="https://twitter.com/rexvencom"
-          >
-            @Rexven
-          </a>
-        </p>
         <p className="mt-2 text-base md:text-lg">Hey there! 👋</p>
         <p className="mt-2  text-base md:text-lg">
-          Hello, I'm Tansel. Once upon a time, I was a national ice hockey
-          player, but after 2-3 years of intense work and dedication, I realized
-          that the software industry was my true passion. I transferred the
-          speed and excitement of the ice rinks to the world of codes and
-          algorithms. Since March 2022, I've been actively working in the
-          software industry, taking on various roles and continually improving
-          myself.
+          Once upon a time, I was a national ice hockey player, but after 2-3
+          years of intense work and dedication, I realized that the software
+          industry was my true passion. I transferred the speed and excitement
+          of the ice rinks to the world of codes and algorithms. Since March
+          2022, I've been actively working in the software industry, taking on
+          various roles and continually improving myself.
         </p>
         <p className="mt-2 text-base md:text-lg">
           I now work at{' '}
           <a
             target="_blank"
             className="text-light-smallHeader dark:text-dark-smallHeader"
-            href="https://www.rexven.com/"
+            href="https://www.linkedin.com/company/cekino"
           >
-            Rexven
+            Çekino
           </a>
         </p>
       </div>

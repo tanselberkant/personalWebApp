@@ -13,7 +13,7 @@ import {
 } from '@heroicons/react/24/solid';
 import Link from 'next/link';
 import NavbarLogo from './NavbarLogo';
-import ThemeSwitcher from './ThemeSwitcher';
+// import ThemeSwitcher from './ThemeSwitcher';
 import { Inconsolata } from 'next/font/google';
 import SocialLinks from './SocialLinks';
 import Footer from './Footer';
@@ -150,7 +150,7 @@ const Layout: React.FC<LayoutProps> = ({
                               </Link>
                             </li>
                           ))}
-                          <ThemeSwitcher />
+                          {/* <ThemeSwitcher /> */}
                         </ul>
                         <SocialLinks />
                       </li>
@@ -201,7 +201,7 @@ const Layout: React.FC<LayoutProps> = ({
                   ))}
 
                   {/* THEME BUTTON */}
-                  <ThemeSwitcher />
+                  {/* <ThemeSwitcher /> */}
                 </ul>
                 <SocialLinks />
               </li>
