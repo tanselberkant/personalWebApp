@@ -44,17 +44,6 @@ const ProjectListHome = ({ projects }: Props) => {
                     <div className="text-light-textDescription dark:text-dark-textDescription font-semibold text-lg">
                       {project.description}
                     </div>
-                    {/* POST CATEGORIES */}
-                    <div className=" text-light-cardBorder dark:text-dark-cardBorder text-base mt-2">
-                      {project.technologies.map((tech, i) => (
-                        <span
-                          className="bg-dark-secondary px-3 py-1 text-white rounded-full text-sm font-semibold mt-4 mr-1"
-                          key={i}
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
                   </div>
                 </div>
               </a>

@@ -53,12 +53,9 @@ const ExperiencesSection = ({ experiences }: Props) => {
                 <h3 className="capitalize font-bold text-2xl">
                   {' '}
                   {experience.position}{' '}
-                  <a
-                    href="#"
-                    className=" font-extrabold text-light-textHeader dark:text-dark-textHeader"
-                  >
+                  <span className=" font-extrabold text-light-textHeader dark:text-dark-textHeader">
                     @{experience.company}
-                  </a>{' '}
+                  </span>{' '}
                 </h3>
                 <div className="mt-2 mb-3">
                   <span className="capitalize font-medium  text-gray-500">
