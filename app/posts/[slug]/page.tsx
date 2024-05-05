@@ -66,10 +66,10 @@ async function Post({ params: { slug } }: Props) {
                 fill
               />
             </div>
-            <section className="p-5 bg-light-textHeader dark:bg-light-textHeader  w-full">
+            <section className="p-5 bg-light-textHeader dark:bg-[#131126]  w-full ">
               <div className="flex flex-col md:flex-row justify-between gap-y-5">
-                <div>
-                  <h1 className="text-xl lg:text-4xl font-extrabold">
+                <div className="z-50">
+                  <h1 className="text-xl lg:text-4xl font-extrabold ">
                     {post.title}{' '}
                   </h1>
                   <p>{formatDate(post._createdAt)}</p>
@@ -105,11 +105,13 @@ async function Post({ params: { slug } }: Props) {
             </section>
           </div>
         </section>
-        <PortableText
-          onMissingComponent={false}
-          value={post.body}
-          components={RichTextComponents}
-        />
+        <div className="mt-10">
+          <PortableText
+            onMissingComponent={false}
+            value={post.body}
+            components={RichTextComponents}
+          />
+        </div>
       </article>
     </Layout>
   );
